@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block title %}Home - Event Management{% endblock %}
+{% block content %}
+<h2>
+    You can add a New Event here in this home page.
+</h2>
+<h2>Add a New Event</h2>
+<form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    <label for="event_type">Event Type:</label>
+    <select id="event_type" name="event_type" required>
+        <option value="">-- Select Type --</option>
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+        <option value="conference">Conference</option>
+        <option value="workshop">Workshop</option>
+        <option value="celebration">Celebration</option>
+    </select>
+
+    <label for="event_name">Event Name:</label>
+    <input type="text" id="event_name" name="event_name" required>
+
+    <label for="description">Event Description:</label>
+    <textarea id="description" name="description" rows="3"></textarea>
+
+    <label for="location">Event Location:</label>
+    <input type="text" id="location" name="location" required>
+
+    <label for="date">Event Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Event Time:</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="entry_fee">Entry Fee (₹):</label>
+    <input type="number" id="entry_fee" name="entry_fee" min="0" required>
+
+    <button type="submit">Add Event</button>
+</form>
+<br><hr><br>
+<section id=about>
+<div>
+    <h2>
+        ABOUT EVENTS
+    </h2>
+    <hr>
+    <h4>
+        To act as a reliable and experiential event organisation partner for our valued clients and help them put together successful events with the help of our experience, expertise and undying commitment to high service standards.
+    </h4>
+</div>
+</section>
+
+<hr>
+
+<section id=contact_us>
+<div>
+    <h2>
+      CONTACT US
+    </h2>
+    <hr>
+    <h4>
+        &#128205; 28, Judge Jubilee Hills Road, Jagadambal Colony Durgapam, Mylore, Chennai, TN, India Pin. 600004<br>
+        &#128386; event@management.net<br>
+        &#128383; +91 8007070080
+    </h4>
+</div>
+</section>
+
+<hr>
+
+<section id=service>
+<div >
+    <h2>
+      SERVICE
+    </h2>
+    <hr>
+    <h4>
+        At this Event Management, we are committed to going above and beyond to ensure our clients are able to deliver disruptive experiences. We started our journey in the event organisation space over two decades ago. During this time, we have organised delightful events for over 100+ brands.
+        <br>
+        We have worked across a variety of platforms and destinations, across countries like Switzerland, Spain, India, France, and Dubai, among many others. We have consistently delivered specialised experiences that are laser-aligned with the business goals of our valued clients.
+        <br>
+        Proficient with cutting-edge experiential technology, our team hopes to continue helping our clients deliver memorable experiences, both in the real and the virtual world.
+    </h4>
+</div>
+</section>
+
+{% endblock %}
