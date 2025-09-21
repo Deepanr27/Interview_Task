@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Event
-from django.contrib import messages
+from django.contrib import messages 
 
 def home(request):
     if request.method == "POST":
@@ -42,13 +42,12 @@ def register_participant(request, event_id):
         messages.success(
             request,
             f"There are {members_count} number of members has been registered for the event: {event.event_name}"
-        )
-    return redirect("event_detail", event_id=event.id)
+        )        
+    return render(request,"register_participants.html", {'event_id':event.id})
 
 
 def delete_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     event.delete()
     messages.success(request, f"The event '{event.event_name}' has been deleted successfully.")
-
     return redirect("events")
