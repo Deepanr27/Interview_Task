@@ -1,11 +1,43 @@
 {% extends 'base.html' %}
-{% block title %}Home - Event Management{% endblock %}
+{% block title %}Home - Demo Event Management{% endblock %}
 {% block content %}
-<h2>
-    You can add a New Event here in this home page.
+<style>
+    .image-list-inline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .image-list-inline li {
+        display: inline-block;   
+        margin-right: 15px;     
+    }
+
+    .image-list-inline img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+</style>
+<h2 align-items:center;>
+    Welcome to Demo Event Management,
 </h2>
-<h2>Add a New Event</h2>
-<form method="post" action="{% url 'home' %}">
+<div class=container>
+    <h2>Our Event Gallery</h2>
+    <div class=image-list-inline>
+    <ul style="list-style-type:none;">
+        <li><img src="https://www.heliosevent.in/wp-content/uploads/2025/07/portfolio-event-6-1.png"></li>
+        <li><img src="https://www.heliosevent.in/wp-content/uploads/2025/07/portfolio-event-4-1.png"></li>
+        <li><img src="https://www.heliosevent.in/wp-content/uploads/2025/07/portfolio-event-11-1.png"></li>
+        <li><img src="https://www.heliosevent.in/wp-content/uploads/2025/07/portfolio-event-12-1.png"></li>
+    </ul>
+    </div>
+</div>
+<hr>
+<form method="post" action="{% url 'home' %}" class=container>
+    <h2>You can add a New Event here in this home page.</h2>
+    <h2>Add a New Event</h2>
     {% csrf_token %}
     <label for="event_type">Event Type:</label>
     <select id="event_type" name="event_type" required>
@@ -38,7 +70,7 @@
     <button type="submit">Add Event</button>
 </form>
 <br><hr><br>
-<section id=about>
+<section id=about class=container>
 <div>
     <h2>
         ABOUT EVENTS
@@ -52,7 +84,7 @@
 
 <hr>
 
-<section id=contact_us>
+<section id=contact_us class=container>
 <div>
     <h2>
       CONTACT US
@@ -68,7 +100,7 @@
 
 <hr>
 
-<section id=service>
+<section id=service class=container>
 <div >
     <h2>
       SERVICE
