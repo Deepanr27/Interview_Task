@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Event Management{% endblock %}</title>
+    <title>{% block title %}Demo Event Management{% endblock %}</title>
     <style>
         html{scroll-behavior: smooth;}
         body {
@@ -12,7 +12,11 @@
             color: #333;
             background-image:url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZXZlbnQlMjBwbGFubmluZ3xlbnwwfHwwfHx8MA%3D%3D');
             background-color: rgba(255, 255, 255, 0.5); 
-            background-blend-mode: lighten; 
+            background-blend-mode: lighten;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed; 
         }
         header {
             background: linear-gradient(135deg, #4CAF50, #2e7d32);
@@ -83,7 +87,7 @@
             margin: 2rem auto;
             padding: 2rem;
             background: white;
-            border-radius: 10px;
+            border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         form label {
@@ -117,11 +121,15 @@
         button:hover {
             background: #3f9643ff;
         }
+        hr{
+            border-width: 0;
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Event Management</h1>
+        <h1>Demo Event Management</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
@@ -138,7 +146,7 @@
         </nav>
     </header>
     <br><br><br>
-    <div class="container">
+    <div >
         {% block content %}{% endblock %}
     </div>
 </body>
