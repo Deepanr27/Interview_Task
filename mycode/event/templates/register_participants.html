@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ event.event_name }} - Participants{% endblock %}
+{% block content %}
+<div class=container>
+<h2>{{ event.event_name }}</h2>
+{% if messages %}
+    <div style="padding: 10px; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; margin-bottom: 15px; color: #155724;">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+</div>
+{% endblock %}
